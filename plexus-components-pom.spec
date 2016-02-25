@@ -6,7 +6,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.2
-Release:        7.12%{?dist}
+Release:        7.13%{?dist}
 Summary:        Plexus Components POM
 BuildArch:      noarch
 License:        ASL 2.0
@@ -14,7 +14,7 @@ URL:            http://plexus.codehaus.org/%{short_name}
 Source0:        http://repo.maven.apache.org/maven2/org/codehaus/plexus/%{short_name}/%{version}/%{short_name}-%{version}.pom
 Source1:        http://www.apache.org/licenses/LICENSE-2.0.txt
 
-BuildRequires:  %{?scl_prefix_java_common}maven-local
+BuildRequires:  %{?scl_prefix}maven-local
 BuildRequires:  %{?scl_prefix}plexus-pom
 BuildRequires:  %{?scl_prefix}plexus-containers-component-metadata
 
@@ -47,6 +47,9 @@ set -e -x
 %doc LICENSE
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 1.2-7.13
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.2-7.12
 - maven33 rebuild #2
 
